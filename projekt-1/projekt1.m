@@ -1,15 +1,25 @@
-% Set working directory to scripts folder
+%#########################################%
+%##   This script only works in 2018b   ##%
+%##   It will probably not function     ##%
+%##   completely in earlier versions.   ##%
+%##                                     ##%
+%##   The course toolbox for Matlab     ##%
+%##   must be installed for the         ##%
+%##   script to work.                   ##%
+%#########################################%
+
+
 clc; clear; close all;
 
 %Path to the dataset
 My_mfilename = mfilename('fullpath');
 cdir = fileparts(cd());
 % Path to the file
-file_path = fullfile(cd(), '/flags/flag-data.csv');
-%Load the data
+file_path = fullfile(cd(), 'flags/flag-data.csv');
+% Load the data
 flag_table = readtable(file_path);
 
-AttributeNames = ["name" "landmass" "zone" "area" "population" "language" "religion" "bars" "stripes" "colours" "red" "green" "blue" "gold" "white" "black" "orange" "mainhue" "circles" "crosses" "saltires" "quarters" "suns/stars" "crescent moon" "triangle" "icon" "animate" "text" "topleft" "botright"];
+AttributeNames = {'name' 'landmass' 'zone' 'area' 'population' 'language' 'religion' 'bars' 'stripes' 'colours' 'red' 'green' 'blue' 'gold' 'white' 'black' 'orange' 'mainhue' 'circles' 'crosses' 'saltires' 'quarters' 'suns/stars' 'crescent moon' 'triangle' 'icon' 'animate' 'text' 'topleft' 'botright'};
 
 Num4_5 = table2array(flag_table(:, 4:5)); 
 Num8_10 = table2array(flag_table(:, 8:10));
