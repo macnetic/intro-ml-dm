@@ -213,7 +213,7 @@ color_proportions = mean(Num11_17, 1);
 colors = {'Red', 'Green', 'Blue', 'Gold/Yellow', 'White', 'Black', 'Orange/Brown'};
 color_categories = categorical(colors(I), colors(I));
 
-figure(4);
+figure(3);
 hold on;
 grid on;
 color_codes = {'r', 'w', 'b', 'g', 'y', 'k', [1.0 .55 .0]};
@@ -227,9 +227,9 @@ ylabel('% of flags using color');
 ylim([0 100]);
 
 %% Histogram for outlier detection and distribution test:
-HistPlotVector = [5 6 15 16 17 33 34 35 36 37]
-HistLegendxAxis = ["Area" "Population" "Bar" "Stripes" "Colours" "Circles" "Crosses" "Saltires" "Quarters" "Suns/Stars"]
-figure
+HistPlotVector = [5 6 15 16 17 33 34 35 36 37];
+HistLegendxAxis = ["Area" "Population" "Bar" "Stripes" "Colours" "Circles" "Crosses" "Saltires" "Quarters" "Suns/Stars"];
+figure(4)
 for i = 1 : length(HistPlotVector)
     subplot(2,5,i)
     hold on
@@ -281,31 +281,31 @@ for i = 1:size(JoinedData,2)
     end
 end
 
-figure;
+figure(5);
 heatmap(sim_smc, 'ColorMethod', 'none');
 title('SMC');
 xlabel('Attribute index');
 ylabel('Attribute index');
 
-figure;
+figure(6);
 heatmap(sim_jac, 'ColorMethod', 'none');
 title('Jaccard');
 xlabel('Attribute index');
 ylabel('Attribute index');
 
-figure;
+figure(7);
 heatmap(sim_cos, 'ColorMethod', 'none');
 title('Cosine');
 xlabel('Attribute index');
 ylabel('Attribute index');
 
-figure;
+figure(8);
 heatmap(sim_cor, 'ColorMethod', 'none');
 title('Correlation');
 xlabel('Attribute index');
 ylabel('Attribute index');
 
-figure;
+figure(9);
 heatmap(sim_ext, 'ColorMethod', 'none');
 title('Extended Jaccard');
 xlabel('Attribute index');
@@ -318,7 +318,7 @@ ylabel('Attribute index');
 % No. of stripes 
 % No. of stars
 clc
-figure
+figure(10)
 %Subplot
 hold on
 grid on
@@ -331,7 +331,7 @@ ylabel('Values of attributes in flags');
 hold off
 %% Projection of data to PC1 and PC2
 PercentPCData = PCAData * V;
-figure
+figure(11)
 hold on
 grid on
 j = 1; k = 2;
@@ -348,7 +348,7 @@ end
 xlabel("PC 1");
 ylabel("PC 2");
 
-figure
+figure(12)
 hold on
 grid on
 j = 1; k = 2;
@@ -365,6 +365,7 @@ end
 xlabel("PC 1");
 ylabel("PC 2");
 hold off
+
 % %% Dataprojection to parallel Dimentions
 % MultiDPCAPlot = zeros(length(S06(1,:)),idx975-1)
 % %PercentPCData = PCAData * V;
@@ -385,7 +386,7 @@ clc
 PCAPlots = 6;
 
 for j = 1 : PCAPlots
-    figure
+    figure(12+j)
     hold on
     grid on
 
