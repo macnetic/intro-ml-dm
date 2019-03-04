@@ -340,8 +340,10 @@ gscatter(PercentPCData(:,j),PercentPCData(:,k),S06)
 lgd = legend({'English', 'Spanish', 'French', 'German', 'Slavic', 'Other Indo-European','Chinese', 'Arabic','Japanese/Turkish/Finnish/Magyar','Other'},...
     'FontSize',16, 'Location', 'best');
 
-% Doesn't work in MATLAB R2017a
-% lgd.NumColumns = 2;
+% Only works in MATLAB R2018a and above
+if ~verLessThan('matlab','9.4')
+    lgd.NumColumns = 2;
+end
 
 xlabel("PC 1");
 ylabel("PC 2");
@@ -355,8 +357,10 @@ gscatter(PercentPCData(:,j),PercentPCData(:,k),S02)
 lgd = legend({'N. America', 'S. America', 'Europe', 'Africa', 'Asia', 'Oceania'},...
     'FontSize',16, 'Location', 'best');
 
-% Doesn't work in MATLAB R2017a
-% lgd.NumColumns = 2;
+% Only works in MATLAB R2018a and above
+if ~verLessThan('matlab','9.4')
+    lgd.NumColumns = 2;
+end
 
 xlabel("PC 1");
 ylabel("PC 2");
