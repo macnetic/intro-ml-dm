@@ -1,5 +1,0 @@
-Bread,Soda,Milk
-Beer,Bread
-Beer,Soda,Diaper,Milk
-Beer,Bread,Diaper,Milk
-Soda,Diaper,Milk
