@@ -77,6 +77,11 @@ Principaldirections = V;
 % Normalized magnitude of the PC's
 rho = diag(S).^2./sum(diag(S).^2);
 
+%% Regression A
+
+%% Regression B
+
+%% Classification
 
 
 
